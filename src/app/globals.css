@@ -3,24 +3,159 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --secondary: #64748b;
+  --accent: #3b82f6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* Override hover for buttons with bg-white and text-indigo-600 - must come after a:hover */
+a.inline-flex.bg-white.text-indigo-600:hover,
+a.inline-flex.bg-white[class*="text-indigo-600"]:hover,
+a.inline-flex[class*="bg-white"][class*="text-indigo-600"]:hover,
+a.bg-white[class*="text-indigo-600"]:hover,
+a[class*="bg-white"][class*="hover:text-indigo-600"]:hover {
+  color: #4f46e5 !important;
+}
+
+/* Header navigation links - override global link color */
+header nav a {
+  color: #000000 !important;
+}
+
+header nav a:hover {
+  color: #4f46e5 !important;
+}
+
+/* Button links - ensure text color is preserved */
+a[class*="text-white"],
+a.text-white,
+button[class*="text-white"],
+button.text-white,
+a[class*="inline-flex"][class*="text-white"],
+a.inline-flex[class*="!text-white"],
+button.inline-flex[class*="!text-white"],
+section[class*="text-white"] a.inline-flex[class*="!text-white"],
+section[class*="text-white"] button.inline-flex[class*="!text-white"],
+section[class*="text-white"] a.inline-flex[class*="bg-green"],
+section[class*="text-white"] button.inline-flex[class*="bg-green"] {
+  color: #ffffff !important;
+}
+
+/* Ensure button links inherit text color from their classes */
+a.inline-flex,
+button.inline-flex {
+  color: inherit;
+}
+
+/* Ensure text-indigo-600 class works properly on buttons/links - must come after inherit rule */
+a.inline-flex[class*="text-indigo-600"],
+a[class*="text-indigo-600"],
+button[class*="text-indigo-600"],
+a.text-indigo-600,
+button.text-indigo-600,
+a.inline-flex.text-indigo-600,
+button.inline-flex.text-indigo-600 {
+  color: #4f46e5 !important;
+}
+
+/* Ensure purple button text color is preserved */
+a.inline-flex[class*="!text-purple-900"],
+a[class*="!text-purple-900"],
+section[class*="text-white"] a.inline-flex[class*="!text-purple-900"],
+section[class*="text-white"] a[class*="bg-purple-50"] {
+  color: #581c87 !important;
+}
+
+/* Override section text-white for buttons with white background */
+a[class*="bg-white"][class*="text-indigo-600"],
+button[class*="bg-white"][class*="text-indigo-600"],
+a.bg-white.text-indigo-600,
+button.bg-white.text-indigo-600,
+section.text-white a[class*="bg-white"],
+section.text-white button[class*="bg-white"],
+section[class*="text-white"] a[class*="bg-white"][class*="text-indigo-600"],
+section[class*="text-white"] button[class*="bg-white"][class*="text-indigo-600"] {
+  color: #4f46e5 !important;
+}
+
+/* Ensure hover text color for white background buttons with indigo text */
+a.inline-flex[class*="bg-white"][class*="text-indigo-600"]:hover,
+button.inline-flex[class*="bg-white"][class*="text-indigo-600"]:hover,
+a.inline-flex[class*="bg-white"][class*="hover:text-indigo-600"]:hover,
+button.inline-flex[class*="bg-white"][class*="hover:text-indigo-600"]:hover,
+a.inline-flex.bg-white[class*="text-indigo-600"]:hover,
+button.inline-flex.bg-white[class*="text-indigo-600"]:hover,
+a.inline-flex.bg-white.hover\:text-indigo-600:hover,
+button.inline-flex.bg-white.hover\:text-indigo-600:hover {
+  color: #4f46e5 !important;
+}
+
+/* Override global a:hover for buttons with specific classes */
+section a.inline-flex[class*="bg-white"][class*="text-indigo-600"]:hover,
+section button.inline-flex[class*="bg-white"][class*="text-indigo-600"]:hover {
+  color: #4f46e5 !important;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Grid Pattern Background */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Footer top padding */
+footer {
+  padding-top: 4rem !important;
+}
+
+@media (min-width: 1024px) {
+  footer {
+    padding-top: 6rem !important;
+  }
 }
