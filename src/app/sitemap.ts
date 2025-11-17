@@ -8,6 +8,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date();
   const currentDateISO = currentDate.toISOString();
   
+  // Helper to add trailing slash to URLs (except base URL)
+  const addTrailingSlash = (url: string): string => {
+    return url === baseUrl ? url : url.endsWith('/') ? url : `${url}/`;
+  };
+  
   // Calculate last modified dates based on content type
   const getLastModified = (monthsAgo: number = 0) => {
     const date = new Date(currentDate);
@@ -24,73 +29,73 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/about`,
+      url: addTrailingSlash(`${baseUrl}/about`),
       lastModified: getLastModified(1),
       changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/services`,
+      url: addTrailingSlash(`${baseUrl}/services`),
       lastModified: currentDateISO,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/solutions`,
+      url: addTrailingSlash(`${baseUrl}/solutions`),
       lastModified: getLastModified(2),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/industries`,
+      url: addTrailingSlash(`${baseUrl}/industries`),
       lastModified: getLastModified(2),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/team`,
+      url: addTrailingSlash(`${baseUrl}/team`),
       lastModified: getLastModified(3),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/blog`,
+      url: addTrailingSlash(`${baseUrl}/blog`),
       lastModified: currentDateISO,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/case-studies`,
+      url: addTrailingSlash(`${baseUrl}/case-studies`),
       lastModified: getLastModified(1),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/testimonials`,
+      url: addTrailingSlash(`${baseUrl}/testimonials`),
       lastModified: getLastModified(2),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/faq`,
+      url: addTrailingSlash(`${baseUrl}/faq`),
       lastModified: getLastModified(3),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/contact`,
+      url: addTrailingSlash(`${baseUrl}/contact`),
       lastModified: getLastModified(6),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/privacy`,
+      url: addTrailingSlash(`${baseUrl}/privacy`),
       lastModified: getLastModified(12),
       changeFrequency: 'yearly' as const,
       priority: 0.3,
     },
     {
-      url: `${baseUrl}/terms`,
+      url: addTrailingSlash(`${baseUrl}/terms`),
       lastModified: getLastModified(12),
       changeFrequency: 'yearly' as const,
       priority: 0.3,
@@ -99,7 +104,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Dynamic service routes with service-specific priorities
   const serviceRoutes = services.map((service) => ({
-    url: `${baseUrl}/services/${service.id}`,
+    url: addTrailingSlash(`${baseUrl}/services/${service.id}`),
     lastModified: getLastModified(1),
     changeFrequency: 'monthly' as const,
     priority: 0.85, // Slightly higher than blog posts but lower than main services page
@@ -116,7 +121,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   
   const blogRoutes = blogPostIds.map((id, index) => ({
-    url: `${baseUrl}/blog/${id}`,
+    url: addTrailingSlash(`${baseUrl}/blog/${id}`),
     lastModified: getLastModified(index < 3 ? 0 : Math.floor(index / 2)), // Recent posts updated more recently
     changeFrequency: 'monthly' as const,
     priority: 0.7,
@@ -129,7 +134,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   
   const caseStudyRoutes = caseStudyIds.map((id) => ({
-    url: `${baseUrl}/case-studies/${id}`,
+    url: addTrailingSlash(`${baseUrl}/case-studies/${id}`),
     lastModified: getLastModified(2),
     changeFrequency: 'monthly' as const,
     priority: 0.75,

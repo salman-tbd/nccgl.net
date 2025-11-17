@@ -1,10 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  reactCompiler: true,
-  
   // Static export configuration
   output: 'export',
+  
+  // Generate pages with trailing slashes to fix 404 errors
+  trailingSlash: true,
   
   // Image optimization (unoptimized for static export)
   images: {

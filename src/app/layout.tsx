@@ -164,7 +164,11 @@ const organizationSchema = {
     "@type": "Place",
     address: {
       "@type": "PostalAddress",
-      addressCountry: "US",
+      streetAddress: "Safal, Safal Pegasus, A-204, 100 Feet Anand Nagar Rd, Chinar Bungalows, Prahlad Nagar",
+      addressLocality: "Ahmedabad",
+      addressRegion: "Gujarat",
+      postalCode: "380015",
+      addressCountry: "IN",
     },
   },
   contactPoint: [
@@ -209,8 +213,11 @@ const organizationSchema = {
   },
   address: {
     "@type": "PostalAddress",
-    addressCountry: "US",
-    // Add specific address details when available
+    streetAddress: "Safal, Safal Pegasus, A-204, 100 Feet Anand Nagar Rd, Chinar Bungalows, Prahlad Nagar",
+    addressLocality: "Ahmedabad",
+    addressRegion: "Gujarat",
+    postalCode: "380015",
+    addressCountry: "IN",
   },
   areaServed: {
     "@type": "Country",

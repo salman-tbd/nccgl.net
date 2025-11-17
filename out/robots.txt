@@ -1,0 +1,39 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /_next/static/
+Disallow: /404
+Disallow: /500
+Disallow: /_next/data/
+Disallow: /private/
+Disallow: /*.json$
+
+User-Agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+User-Agent: Googlebot-Image
+Allow: /assets/images/
+Allow: /assets/logo/
+
+User-Agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+User-Agent: YandexBot
+User-Agent: Slurp
+User-Agent: DuckDuckBot
+User-Agent: Baiduspider
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+Host: https://nccgl.net
+Sitemap: https://nccgl.net/sitemap.xml
