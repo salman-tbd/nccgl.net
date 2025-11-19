@@ -191,7 +191,7 @@ export default function TeamPage() {
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Collaboration</h3>
               <p className="text-gray-600 leading-relaxed">
-                We foster a culture of open communication and teamwork, where every team member&apos;s contribution is valued and recognized.
+                We foster a culture of open communication and teamwork, where every team member&;s contribution is valued and recognized.
               </p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-center group border-2 border-gray-100">
