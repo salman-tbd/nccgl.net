@@ -6,7 +6,7 @@ const POSTS_PER_PAGE = 6;
 
 export const metadata = generateSEOMetadata({
   title: "Blog",
-  description: "Read the latest insights, news, and updates from NCCGL Software Solutions on technology trends, software development, cloud computing, cybersecurity, and IT best practices.",
+  description: "Read the latest insights, news, and updates from NCCGL on technology trends, software development, cloud computing, cybersecurity, and IT best practices.",
   keywords: ["IT blog", "technology insights", "software development blog", "cloud computing articles", "cybersecurity trends", "IT best practices", "tech news"],
   url: "/blog",
 });

@@ -1,4 +1,4 @@
-# Robots.txt for NCCGL Software Solutions
+# Robots.txt for NCCGL
 # https://www.nccgl.net/robots.txt
 
 # Allow all search engines

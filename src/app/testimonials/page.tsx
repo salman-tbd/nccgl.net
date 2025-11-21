@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export const metadata = generateSEOMetadata({
   title: "Client Testimonials",
-  description: "Read what our clients have to say about working with NCCGL Software Solutions. Real testimonials from satisfied customers about our IT services, software development, and technology solutions.",
+  description: "Read what our clients have to say about working with NCCGL. Real testimonials from satisfied customers about our IT services, software development, and technology solutions.",
   keywords: ["client testimonials", "customer reviews", "IT services reviews", "software development testimonials", "client feedback", "customer testimonials"],
   url: "/testimonials",
 });
@@ -145,7 +145,7 @@ export default function TestimonialsPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/assets/images/businesspeople-are-their-business-trip (1).jpg"
-            alt="Client testimonials and success stories background - NCCGL Software Solutions"
+            alt="Client testimonials and success stories background - NCCGL"
             fill
             className="object-cover"
             sizes="100vw"

@@ -1,6 +1,6 @@
 export const companyInfo = {
   name: "NCCGL",
-  fullName: "NCCGL Software Solutions",
+  fullName: "NCCGL",
   domain: "nccgl.net",
   industry: "IT / Software",
   establishedYear: 1999,
